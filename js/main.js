@@ -29,13 +29,15 @@
       values: {
         scrollText_opacity_out: [1, 0, { start: 0, end: 0.1 }],
         mainText_opacity_out: [1, 0, { start: 0.1, end: 0.3 }],
-        mainText_scale: [1, 0.5, { start: 0.1, end: 0.3 }],
-        rightGrass_0_in: [-51, 0, { start: 0.2, end: 0.3 }],
-        rightGrass_1_in: [-51, -5, { start: 0.23, end: 0.34 }],
-        rightGrass_1_in_top: [-13, -10, { start: 0.28, end: 0.34 }],
-        rightGrass_2_in: [-51, 0, { start: 0.1, end: 0.4 }],
-        rightGrass_3_in: [-51, 0, { start: 0.1, end: 0.4 }],
-        rightGrass_4_in: [-51, 0, { start: 0.1, end: 0.4 }],
+        mainText_scale: [1, 0.5, { start: 0.1, end: 0.35 }],
+        rightGrass_0_in: [-61, 0, { start: 0.2, end: 0.35 }],
+        rightGrass_1_in: [-61, -15, { start: 0.23, end: 0.4 }],
+        rightGrass_1_in_top: [-13, -10, { start: 0.28, end: 0.4 }],
+        rightGrass_2_in: [-61, -10, { start: 0.2, end: 0.4 }],
+        rightGrass_3_in: [-61, -14, { start: 0.1, end: 0.4 }],
+        rightGrass_3_in_top: [20, 18, { start: 0.1, end: 0.4 }],
+        rightGrass_4_in: [-61, -3, { start: 0.1, end: 0.4 }],
+        rightGrass_4_in_top: [30, 27, { start: 0.1, end: 0.4 }],
       }
     }
   ];
@@ -126,6 +128,11 @@
         objs.rightGrass_0.style.left = `${calcValues(values.rightGrass_0_in, currentYOffset)}rem`;
         objs.rightGrass_1.style.left = `${calcValues(values.rightGrass_1_in, currentYOffset)}rem`;
         objs.rightGrass_1.style.top = `${calcValues(values.rightGrass_1_in_top, currentYOffset)}rem`;
+        objs.rightGrass_2.style.left = `${calcValues(values.rightGrass_2_in, currentYOffset)}rem`;
+        objs.rightGrass_3.style.left = `${calcValues(values.rightGrass_3_in, currentYOffset)}rem`;
+        objs.rightGrass_3.style.top = `${calcValues(values.rightGrass_3_in_top, currentYOffset)}rem`;
+        objs.rightGrass_4.style.left = `${calcValues(values.rightGrass_4_in, currentYOffset)}rem`;
+        objs.rightGrass_4.style.top = `${calcValues(values.rightGrass_4_in_top, currentYOffset)}rem`;
         break;
 
       case 2:
