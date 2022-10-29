@@ -7,6 +7,7 @@
   let delayedYOffset = 0;
   let rafId;
   let rafState;
+  const GRASS_COUNT = 5;
 
   const sceneInfo = [
     {
@@ -72,6 +73,8 @@
       sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
     }
 
+
+
     yOffset = window.pageYOffset;
     let totalScrollHeight = 0;
     for (let i = 0; i < sceneInfo.length; i++) {
@@ -83,6 +86,15 @@
     }
     document.body.setAttribute('id', `show-scene-${currentScene}`)
 
+  }
+
+  function setGrass() {
+    //화면에 따른 풀숲 크기 지정
+    for (let i = 0; i < GRASS_COUNT; i++) {
+      sceneInfo[0].objs[`rightGrass_${i}`].style.height = `${46 + Math.floor(Math.random() * 10)}vh`
+      sceneInfo[0].objs[`rightGrass_${i}`].style.width = '100vw'
+    }
+    //화면에 따른 풀숲 이동 조정
   }
 
   function calcValues(values, currentYOffset) {
