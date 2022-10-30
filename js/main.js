@@ -25,6 +25,9 @@
         rightGrass_2: document.querySelector('#scroll-section-0 .right-grass-img.c'),
         rightGrass_3: document.querySelector('#scroll-section-0 .right-grass-img.d'),
         rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.e'),
+        rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.f'),
+        rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.g'),
+        rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.h'),
         grassImage: []
       },
       values: {
@@ -73,7 +76,7 @@
       sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
     }
 
-
+    setGrass()
 
     yOffset = window.pageYOffset;
     let totalScrollHeight = 0;
@@ -91,8 +94,11 @@
   function setGrass() {
     //화면에 따른 풀숲 크기 지정
     for (let i = 0; i < GRASS_COUNT; i++) {
-      sceneInfo[0].objs[`rightGrass_${i}`].style.height = `${46 + Math.floor(Math.random() * 10)}vh`
-      sceneInfo[0].objs[`rightGrass_${i}`].style.width = '100vw'
+      const h = 46 + Math.floor(Math.random() * 10)
+      const w = h * 1.8
+      sceneInfo[0].objs[`rightGrass_${i}`].style.height = `${h}vh`
+      sceneInfo[0].objs[`rightGrass_${i}`].style.width = `${w}vh`
+      sceneInfo[0].values[`rightGrass_${i}_in`][0] = `-${w}vh`
     }
     //화면에 따른 풀숲 이동 조정
   }
@@ -137,13 +143,13 @@
         objs.scrollText.style.opacity = calcValues(values.scrollText_opacity_out, currentYOffset)
         objs.mainText.style.opacity = calcValues(values.mainText_opacity_out, currentYOffset)
         objs.mainText.style.transform = `scale(${calcValues(values.mainText_scale, currentYOffset)})`;
-        objs.rightGrass_0.style.left = `${calcValues(values.rightGrass_0_in, currentYOffset)}rem`;
-        objs.rightGrass_1.style.left = `${calcValues(values.rightGrass_1_in, currentYOffset)}rem`;
+        objs.rightGrass_0.style.left = `${calcValues(values.rightGrass_0_in, currentYOffset)}vh`;
+        objs.rightGrass_1.style.left = `${calcValues(values.rightGrass_1_in, currentYOffset)}vh`;
         objs.rightGrass_1.style.top = `${calcValues(values.rightGrass_1_in_top, currentYOffset)}rem`;
-        objs.rightGrass_2.style.left = `${calcValues(values.rightGrass_2_in, currentYOffset)}rem`;
-        objs.rightGrass_3.style.left = `${calcValues(values.rightGrass_3_in, currentYOffset)}rem`;
+        objs.rightGrass_2.style.left = `${calcValues(values.rightGrass_2_in, currentYOffset)}vh`;
+        objs.rightGrass_3.style.left = `${calcValues(values.rightGrass_3_in, currentYOffset)}vh`;
         objs.rightGrass_3.style.top = `${calcValues(values.rightGrass_3_in_top, currentYOffset)}rem`;
-        objs.rightGrass_4.style.left = `${calcValues(values.rightGrass_4_in, currentYOffset)}rem`;
+        objs.rightGrass_4.style.left = `${calcValues(values.rightGrass_4_in, currentYOffset)}vh`;
         objs.rightGrass_4.style.top = `${calcValues(values.rightGrass_4_in_top, currentYOffset)}rem`;
         break;
 
