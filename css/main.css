@@ -318,6 +318,20 @@ body.before-load {
   left: -61rem;
 }
 
+.grass-container {
+  width: fit-content;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  top: 0;
+}
+
+.grass-container .checking-bg {
+  width: 100vw;
+  background-color: black;
+}
+
 @media (min-width: 1024px) {
   #scroll-section-0 h1 {
     font-size: 13vw;
