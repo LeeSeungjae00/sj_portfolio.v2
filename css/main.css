@@ -329,7 +329,6 @@ body.before-load {
 
 .grass-container .checking-bg {
   width: 100vw;
-  background-color: black;
 }
 
 @media (min-width: 1024px) {

@@ -20,28 +20,15 @@
         container: document.querySelector('#scroll-section-0'),
         mainText: document.querySelector('#scroll-section-0 .title-message h1'),
         scrollText: document.querySelector('#scroll-section-0 .scroll-message'),
-        rightGrass_0: document.querySelector('#scroll-section-0 .right-grass-img.a'),
-        rightGrass_1: document.querySelector('#scroll-section-0 .right-grass-img.b'),
-        rightGrass_2: document.querySelector('#scroll-section-0 .right-grass-img.c'),
-        rightGrass_3: document.querySelector('#scroll-section-0 .right-grass-img.d'),
-        rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.e'),
-        rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.f'),
-        rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.g'),
-        rightGrass_4: document.querySelector('#scroll-section-0 .right-grass-img.h'),
-        grassImage: []
+        checking_bg: document.querySelector('#scroll-section-0 .checking-bg'),
       },
       values: {
         scrollText_opacity_out: [1, 0, { start: 0, end: 0.1 }],
         mainText_opacity_out: [1, 0, { start: 0.1, end: 0.3 }],
         mainText_scale: [1, 0.5, { start: 0.1, end: 0.35 }],
-        rightGrass_0_in: [-61, 0, { start: 0.2, end: 0.35 }],
-        rightGrass_1_in: [-61, -15, { start: 0.23, end: 0.4 }],
-        rightGrass_1_in_top: [-13, -10, { start: 0.28, end: 0.4 }],
-        rightGrass_2_in: [-61, -10, { start: 0.2, end: 0.4 }],
-        rightGrass_3_in: [-61, -14, { start: 0.1, end: 0.4 }],
-        rightGrass_3_in_top: [20, 18, { start: 0.1, end: 0.4 }],
-        rightGrass_4_in: [-61, -3, { start: 0.1, end: 0.4 }],
-        rightGrass_4_in_top: [30, 27, { start: 0.1, end: 0.4 }],
+        checking_bg_in: [100, 0, { start: 0.2, end: 0.35 }],
+        // checking-bg_out: [0, 100, { start: 0.23, end: 0.4 }],
+
       }
     }
   ];
@@ -138,21 +125,13 @@
 
     switch (currentScene) {
       case 0:
-        console.log(calcValues(values.rightGrass_0_in, currentYOffset))
 
         // let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
         // objs.context.drawImage(objs.videoImages[sequence], 0, 0)
         objs.scrollText.style.opacity = calcValues(values.scrollText_opacity_out, currentYOffset)
         objs.mainText.style.opacity = calcValues(values.mainText_opacity_out, currentYOffset)
         objs.mainText.style.transform = `scale(${calcValues(values.mainText_scale, currentYOffset)})`;
-        objs.rightGrass_0.style.left = `${calcValues(values.rightGrass_0_in, currentYOffset)}rem`;
-        // objs.rightGrass_1.style.left = `${calcValues(values.rightGrass_1_in, currentYOffset)}rem`;
-        // objs.rightGrass_1.style.top = `${calcValues(values.rightGrass_1_in_top, currentYOffset)}rem`;
-        // objs.rightGrass_2.style.left = `${calcValues(values.rightGrass_2_in, currentYOffset)}rem`;
-        // objs.rightGrass_3.style.left = `${calcValues(values.rightGrass_3_in, currentYOffset)}rem`;
-        // objs.rightGrass_3.style.top = `${calcValues(values.rightGrass_3_in_top, currentYOffset)}rem`;
-        // objs.rightGrass_4.style.left = `${calcValues(values.rightGrass_4_in, currentYOffset)}rem`;
-        // objs.rightGrass_4.style.top = `${calcValues(values.rightGrass_4_in_top, currentYOffset)}rem`;
+        objs.checking_bg.style.width = `${calcValues(values.checking_bg_in, currentYOffset)}vw`
         break;
 
       case 2:
