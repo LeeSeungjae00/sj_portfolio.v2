@@ -25,9 +25,9 @@
       values: {
         scrollText_opacity_out: [1, 0, { start: 0, end: 0.1 }],
         mainText_opacity_out: [1, 0, { start: 0.1, end: 0.3 }],
-        mainText_scale: [1, 0.5, { start: 0.1, end: 0.35 }],
-        checking_bg_in: [100, 0, { start: 0.2, end: 0.35 }],
-        checking_bg_out: [0, 100, { start: 0.38, end: 0.54 }],
+        mainText_scale: [1, 0.5, { start: 0.1, end: 0.4 }],
+        checking_bg_in: [200, 0, { start: 0.2, end: 0.4 }],
+        checking_bg_out: [0, 200, { start: 0.5, end: 0.7 }],
 
       }
     }
@@ -79,14 +79,14 @@
   }
 
   function setGrass() {
-    //화면에 따른 풀숲 크기 지정
-    // for (let i = 0; i < GRASS_COUNT; i++) {
-    //   const h = 46 + Math.floor(Math.random() * 10)
-    //   const w = h * 1.8
-    //   sceneInfo[0].objs[`rightGrass_${i}`].style.height = `${h}vh`
-    //   sceneInfo[0].objs[`rightGrass_${i}`].style.width = `${w}vh`
-    //   sceneInfo[0].values[`rightGrass_${i}_in`][0] = `-${w}vh`
-    // }
+    //grass 랜덤으로 위치 조정
+    const bottom = 133;
+    const arr = [bottom, bottom * 3, bottom * 5]
+    for (let i = 0; i < 3; i++) {
+      const leftFront = 300 + (Math.random() * 100).toFixed(0) * 1
+      document.querySelector(`.grass-img.no${i + 1}`).style.bottom = `${arr[i]}px`
+      document.querySelector(`.grass-img.no${i + 1}`).style.left = `${leftFront}px`
+    }
     //화면에 따른 풀숲 이동 조정
   }
 
@@ -132,7 +132,7 @@
         objs.mainText.style.opacity = calcValues(values.mainText_opacity_out, currentYOffset)
         objs.mainText.style.transform = `scale(${calcValues(values.mainText_scale, currentYOffset)})`;
 
-        if (scrollRatio <= 0.35) {
+        if (scrollRatio <= 0.4) {
           objs.checking_bg.style.width = `${calcValues(values.checking_bg_in, currentYOffset)}vw`
         } else {
           objs.checking_bg.style.width = `${calcValues(values.checking_bg_out, currentYOffset)}vw`

@@ -314,8 +314,7 @@ body.before-load {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  top: 0;
-  left: -61rem;
+  position: relative;
 }
 
 .grass-container {
