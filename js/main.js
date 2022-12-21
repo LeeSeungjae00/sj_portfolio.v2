@@ -27,7 +27,7 @@
         mainText_opacity_out: [1, 0, { start: 0.1, end: 0.3 }],
         mainText_scale: [1, 0.5, { start: 0.1, end: 0.35 }],
         checking_bg_in: [100, 0, { start: 0.2, end: 0.35 }],
-        // checking-bg_out: [0, 100, { start: 0.23, end: 0.4 }],
+        checking_bg_out: [0, 100, { start: 0.38, end: 0.54 }],
 
       }
     }
@@ -131,7 +131,13 @@
         objs.scrollText.style.opacity = calcValues(values.scrollText_opacity_out, currentYOffset)
         objs.mainText.style.opacity = calcValues(values.mainText_opacity_out, currentYOffset)
         objs.mainText.style.transform = `scale(${calcValues(values.mainText_scale, currentYOffset)})`;
-        objs.checking_bg.style.width = `${calcValues(values.checking_bg_in, currentYOffset)}vw`
+
+        if (scrollRatio <= 0.35) {
+          objs.checking_bg.style.width = `${calcValues(values.checking_bg_in, currentYOffset)}vw`
+        } else {
+          objs.checking_bg.style.width = `${calcValues(values.checking_bg_out, currentYOffset)}vw`
+        }
+
         break;
 
       case 2:
